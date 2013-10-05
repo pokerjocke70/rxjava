@@ -1,0 +1,26 @@
+apply plugin: "groovy"
+apply plugin: "application"
+apply plugin: "idea"
+
+sourceCompability = "1.7"
+
+targetCompability = "1.7"
+
+
+project.ext {
+
+    camelVersion = '2.12.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.apache.camel:camel-rx:${camelVersion}"
+    compile "org.apache.camel:camel-stream:${camelVersion}"
+    compile 'org.codehaus.groovy:groovy-all:2.1.6'
+    compile 'com.netflix.rxjava:rxjava-groovy:0.14.2'
+    compile 'org.codehaus.gpars:gpars:1.1.0'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
